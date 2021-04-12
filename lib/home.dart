@@ -1,3 +1,8 @@
+import 'package:components/components/navbar.dart';
+import 'package:components/screens/home_screen.dart';
+import 'package:components/screens/message_screen.dart';
+import 'package:components/screens/notification.dart';
+import 'package:components/screens/settings.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,8 +15,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Home"),
+    List screens = [
+      HomeScreen(),
+      MessageScreen(),
+      NotificationScreen(),
+      SettingsScreen(),
+    ];
+    return Scaffold(
+      body: screens[CustomNavbar.selectedIndex],
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          setState(() {});
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: CustomNavbar(),
     );
   }
 }
