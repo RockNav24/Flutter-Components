@@ -1,4 +1,4 @@
-import 'package:components/components/navbar2.dart';
+import 'package:components/components/navbars/navbar2.dart';
 import 'package:components/providers/navbar_provider.dart';
 import 'package:components/screens/home_screen.dart';
 import 'package:components/screens/message_screen.dart';
@@ -27,14 +27,15 @@ class _HomeState extends State<Home> {
         create: (_) => CustomNavBarProvider(),
         builder: (context, _) {
           return Scaffold(
-            backgroundColor: Colors.transparent,
             body: Stack(
               children: [
                 Consumer<CustomNavBarProvider>(
                     builder: (context, customNavBarProvider, child) {
                   return screens[customNavBarProvider.navBarIndex];
                 }),
-                CustomNavbar2(),
+                SafeArea(
+                  child: CustomNavbar2(),
+                ),
               ],
             ),
             // body: Column(

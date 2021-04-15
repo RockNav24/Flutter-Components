@@ -29,6 +29,7 @@ class _CustomNavbar2State extends State<CustomNavbar2> {
             children: [
               Icon(
                 iconData,
+                size: 28,
                 color: customNavBar.navBarIndex == indexNum
                     ? Colors.red[400]
                     : Colors.grey,
@@ -53,9 +54,9 @@ class _CustomNavbar2State extends State<CustomNavbar2> {
     return Stack(
       children: [
         Positioned(
-          bottom: 20,
-          left: MediaQuery.of(context).size.width * 0.1,
-          right: MediaQuery.of(context).size.width * 0.1,
+          bottom: 0,
+          left: MediaQuery.of(context).size.width * 0.05,
+          right: MediaQuery.of(context).size.width * 0.05,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
@@ -69,7 +70,7 @@ class _CustomNavbar2State extends State<CustomNavbar2> {
                 )
               ],
             ),
-            height: 60,
+            height: 70,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
