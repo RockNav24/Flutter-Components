@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.black),
+          brightness: Brightness.light,
           backgroundColor: Colors.transparent,
           elevation: 0,
           textTheme: TextTheme(

@@ -18,11 +18,18 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: Icon(Icons.filter_tilt_shift),
           onPressed: () {},
         ),
-        title: Text("Home"),
+        title: Text(
+          "Home",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
         actions: [
           IconButton(
             padding: EdgeInsets.symmetric(horizontal: 30),
-            icon: Icon(Icons.camera_alt_outlined),
+            icon: Icon(
+              Icons.camera_alt_outlined,
+            ),
             onPressed: () {},
           ),
         ],
