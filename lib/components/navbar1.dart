@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class CustomNavbar extends StatefulWidget {
+class CustomNavbar1 extends StatefulWidget {
   static int selectedIndex = 0;
-  CustomNavbar({Key key}) : super(key: key);
+  CustomNavbar1({Key key}) : super(key: key);
 
   @override
-  _CustomNavbarState createState() => _CustomNavbarState();
+  _CustomNavbar1State createState() => _CustomNavbar1State();
 }
 
-class _CustomNavbarState extends State<CustomNavbar> {
+class _CustomNavbar1State extends State<CustomNavbar1> {
   Widget navBarButton(
     IconData iconData,
     String text,
@@ -17,7 +17,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
     return InkWell(
       onTap: () {
         setState(() {
-          CustomNavbar.selectedIndex = indexNum;
+          CustomNavbar1.selectedIndex = indexNum;
         });
       },
       child: Column(
@@ -25,14 +25,14 @@ class _CustomNavbarState extends State<CustomNavbar> {
         children: [
           Icon(
             iconData,
-            color: CustomNavbar.selectedIndex == indexNum
+            color: CustomNavbar1.selectedIndex == indexNum
                 ? Colors.red[400]
                 : Colors.grey,
           ),
           Text(
             text,
             style: TextStyle(
-              color: CustomNavbar.selectedIndex == indexNum
+              color: CustomNavbar1.selectedIndex == indexNum
                   ? Colors.red[400]
                   : Colors.grey,
             ),

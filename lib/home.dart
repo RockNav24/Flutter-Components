@@ -1,4 +1,5 @@
-import 'package:components/components/navbar.dart';
+import 'package:components/components/navbar1.dart';
+import 'package:components/components/navbar2.dart';
 import 'package:components/screens/home_screen.dart';
 import 'package:components/screens/message_screen.dart';
 import 'package:components/screens/notification.dart';
@@ -13,24 +14,41 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List screens = [
+    HomeScreen(),
+    MessageScreen(),
+    NotificationScreen(),
+    SettingsScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
-    List screens = [
-      HomeScreen(),
-      MessageScreen(),
-      NotificationScreen(),
-      SettingsScreen(),
-    ];
     return Scaffold(
-      body: screens[CustomNavbar.selectedIndex],
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {});
-        },
+      backgroundColor: Colors.transparent,
+      body: Stack(
+        children: [
+          screens[CustomNavbar2.selectedIndex],
+          CustomNavbar2(),
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: CustomNavbar(),
+      // body: Column(
+      //   children: [
+      //     Expanded(
+      //       flex: 7,
+      //       child: screens[CustomNavbar2.selectedIndex],
+      //     ),
+      //     Expanded(
+      //       flex: 1,
+      //       child: CustomNavbar2(),
+      //     ),
+      //   ],
+      // ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed: () {
+      //     setState(() {});
+      //   },
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

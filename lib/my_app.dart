@@ -12,7 +12,17 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.red[400],
       ),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Container(
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(
+                "https://mir-s3-cdn-cf.behance.net/project_modules/disp/496ecb14589707.562865d064f9e.png"),
+          ),
+        ),
+        child: Home(),
+      ),
     );
   }
 }
