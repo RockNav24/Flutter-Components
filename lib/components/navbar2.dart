@@ -1,7 +1,8 @@
+import 'package:components/providers/navbar_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomNavbar2 extends StatefulWidget {
-  static int selectedIndex = 0;
   CustomNavbar2({Key key}) : super(key: key);
 
   @override
@@ -17,27 +18,32 @@ class _CustomNavbar2State extends State<CustomNavbar2> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          CustomNavbar2.selectedIndex = indexNum;
+          Provider.of<CustomNavBarProvider>(context, listen: false)
+              .setNavBarIndex = indexNum;
         });
       },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            iconData,
-            color: CustomNavbar2.selectedIndex == indexNum
-                ? Colors.red[400]
-                : Colors.grey,
-          ),
-          Text(
-            text,
-            style: TextStyle(
-              color: CustomNavbar2.selectedIndex == indexNum
-                  ? Colors.red[400]
-                  : Colors.grey,
-            ),
-          ),
-        ],
+      child: Consumer<CustomNavBarProvider>(
+        builder: (context, customNavBar, child) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                iconData,
+                color: customNavBar.navBarIndex == indexNum
+                    ? Colors.red[400]
+                    : Colors.grey,
+              ),
+              Text(
+                text,
+                style: TextStyle(
+                  color: customNavBar.navBarIndex == indexNum
+                      ? Colors.red[400]
+                      : Colors.grey,
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

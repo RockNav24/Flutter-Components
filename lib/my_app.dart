@@ -8,6 +8,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.transparent,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              fontFamily: 'Open Sans',
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+            ),
+          ),
+        ),
         primaryColor: Colors.red[400],
         accentColor: Colors.red[400],
       ),
