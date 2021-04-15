@@ -31,21 +31,21 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             CustomCardWithImage(
-              title: "Welcome",
+              title: "Welcome1",
               image: NetworkImage(
                   "https://composeclick.com/wp-content/uploads/2018/05/nature-1.jpg"),
               description:
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
             ),
             CustomCardWithImage(
-              title: "Welcome",
+              title: "Welcome2",
               image: NetworkImage(
                   "https://composeclick.com/wp-content/uploads/2018/05/nature-1.jpg"),
               description:
                   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
             ),
             CustomCardWithImage(
-              title: "Welcome",
+              title: "Welcome3",
               image: NetworkImage(
                   "https://composeclick.com/wp-content/uploads/2018/05/nature-1.jpg"),
               description:
